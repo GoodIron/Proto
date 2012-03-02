@@ -4,7 +4,7 @@ describe "LayoutLinks" do
 
   it "should have a Home page at '/'" do
     get '/'
-    response.should have selector('title', :content => "Home")
+    response.should have_selector('title', :content => "Home")
   end
 
   it "should have a Contact page at '/contact'" do
@@ -13,7 +13,7 @@ describe "LayoutLinks" do
   end
 
   it "should have an About page at '/about'" do
-    get '/contact'
+    get '/about'
     response.should have_selector('title', :content => "About")
   end
 
@@ -22,6 +22,10 @@ describe "LayoutLinks" do
     response.should have_selector('title', :content => "Help")
   end
 
+  it "should have a signup page at '/signup'" do
+    get '/signup'
+    response.should have_selector('title', :content => "Sign up")
+  end
 
 #  describe "GET /layout_links" do
 #    it "works! (now write some real specs)" do
